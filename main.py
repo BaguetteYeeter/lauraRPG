@@ -11,6 +11,7 @@ import time
 import random
 import ast
 import sys
+import webbrowser
 #   CUSTOM IMPORTS
 from configs import *
 from colors import *
@@ -31,8 +32,13 @@ pygame.display.update()
 menu.init()
 while True:
     screen.menu.showButtons()
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            exit()
+    events = pygame.event.get()
+    screen.menu.buttonClick(events, playButton, mpButton, settingButton, exitButton, discordButton, redditButton)
+    if discordButton.pressed:
+        discordButton.pressed = False
+        webbrowser.open('https://discord.gg/2KNxTVEfTY')
+    if redditButton.pressed:
+        redditButton.pressed = False
+        webbrowser.open('https://reddit.com/r/laurabrehd')
 
 exit()

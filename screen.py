@@ -15,8 +15,18 @@ class screen:
                 self.rect = pygame.Rect(x, y, w, h)
         def showButtons():
             mainScreen.blit(title.image, (x/10, y/20))
-            mainScreen.blit(playButton.image, (x*(2/10), y*(7/10)))
-            mainScreen.blit(mpButton.image, (x*(2/10), y*(8.5/10)))
-            mainScreen.blit(settingButton.image, (x*(6/10), y*(7/10)))
-            mainScreen.blit(exitButton.image, (x*(6/10), y*(8.5/10)))
+            mainScreen.blit(playButton.image, (playButton.x, playButton.y))
+            mainScreen.blit(mpButton.image, (mpButton.x, mpButton.y))
+            mainScreen.blit(settingButton.image, (settingButton.x, settingButton.y))
+            mainScreen.blit(exitButton.image, (exitButton.x, exitButton.y))
+            mainScreen.blit(discordButton.image, (discordButton.x, discordButton.y))
+            mainScreen.blit(redditButton.image, (redditButton.x, redditButton.y))
             pygame.display.update()
+        def buttonClick(events, *args):
+            for event in events:
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    for i in args:
+                        if i.rect.collidepoint(event.pos):
+                            i.pressed = True
+                        else:
+                            i.pressed = False

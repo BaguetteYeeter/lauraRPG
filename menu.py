@@ -1,6 +1,6 @@
 class menu:
     def init():
-        global title, playButton, mpButton, settingButton, exitButton
+        global title, playButton, mpButton, settingButton, exitButton, discordButton, redditButton
 
         titleWidth = x*(4/5)
         titleHeight = y*(3/5)
@@ -12,3 +12,5 @@ class menu:
         mpButton = screen.menu.button(x=x*0.2, y=y*0.85, w=buttonWidth, h=buttonHeight, image="images/mpButton.png")
         settingButton = screen.menu.button(x=x*0.6, y=y*0.7, w=buttonWidth, h=buttonHeight, image="images/settingButton.png")
         exitButton = screen.menu.button(x=x*0.6, y=y*0.85, w=buttonWidth, h=buttonHeight, image="images/exitButton.png")
+        discordButton = screen.menu.button(x=x-(y/10), y=y-(y/10), w=y/10, h=y/10, image="images/discord.png")
+        redditButton = screen.menu.button(x=x-2*(y/10), y=y-(y/10), w=y/10, h=y/10, image="images/reddit.png")
