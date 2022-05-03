@@ -15,6 +15,7 @@ import sys
 from configs import *
 from colors import *
 add("menu.py")
+add("screen.py")
 print("Imports Finished")
 
 def exit():
@@ -29,6 +30,9 @@ pygame.display.update()
 
 menu.init()
 while True:
-    menu.showButtons()
+    screen.menu.showButtons()
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            exit()
 
 exit()
