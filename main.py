@@ -1,7 +1,9 @@
 from start import *
 
 def add(name):
-    exec(open(name, "r").read())
+    f = open(name, "r")
+    exec(f.read())
+    f.close()
     globals().update(locals())
 
 print("Starting imports")
