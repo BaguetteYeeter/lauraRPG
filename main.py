@@ -35,6 +35,9 @@ menu.init()
 while True:
     screen.menu.showButtons()
     events = pygame.event.get()
+    for i in events:
+        if i.type == pygame.QUIT:
+            exit()
     screen.menu.buttonClick(events, playButton, mpButton, settingButton, exitButton, discordButton, redditButton)
     if discordButton.pressed:
         discordButton.pressed = False
